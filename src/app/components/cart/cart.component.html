@@ -1,19 +1,15 @@
-<aside class="cart-modal">
-
-  <h2 class="cart__title">Carrito de compras</h2>
-  <div *ngIf="cartItems.length === 0">
-    No hay productos en el carrito.
-  </div>
-  <div class="cart">
-    <div class="cart__items">
-      <div class="cart-item" *ngFor="let item of cartItems">
-        <img class="cart-item__image" [src]="item.image" alt="Product Image">
-        <h3 class="cart-item__title">{{ item.title }}</h3>
-        <h5 class="cart-item__title">{{item.description}}</h5>
-        <p class="cart-item__price">{{ item.price | currency }}</p>
-        <button class="cart-item__remove-button" (click)="removeFromCart(item)">Eliminar</button>
-      </div>
-      <p class="total">Total: {{ cartService.getTotal() | currency }}</p>
+<h2 class="cart__title">Carrito de compras</h2>
+<div *ngIf="cartItems.length === 0">
+  No hay productos en el carrito.
+</div>
+<div class="cart">
+  <div class="cart__items">
+    <div class="cart-item" *ngFor="let item of cartItems">
+      <img class="cart-item__image" [src]="item.image" alt="Product Image">
+      <h3 class="cart-item__title">{{ item.title }}</h3>
+      <p class="cart-item__title">{{item.description}}</p>
+      <p class="cart-item__price">{{ item.price | currency }}</p>
+      <button class="cart-item__remove-button" (click)="removeFromCart(item)">Eliminar</button>
     </div>
-
+    <p class="total">Total: {{ cartService.getTotal() | currency }}</p>
   </div>

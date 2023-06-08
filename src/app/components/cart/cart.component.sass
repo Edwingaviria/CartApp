@@ -1,13 +1,12 @@
 
-
 .cart
-  display: block
-  align-items: center
-  flex-wrap: wrap
+  display: grid
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr))
   gap: 16px
+  align-items: center
+  text-align: center
 
 .cart-item
-  flex-basis: auto
   padding: 16px
   border: 1px solid #606197
 
@@ -19,9 +18,12 @@
   margin-top: 16px
   font-weight: bold
 
-.cart-item p
+
+.cart-item__price
   margin-top: 8px
   color: #820956
+  font-weight: bold
+  font-size: 20px
 
 .cart-item button
   background-color: #ff0000
@@ -34,3 +36,22 @@
   font-size: 14px
   margin: auto 0
   cursor: pointer
+
+.total
+  font-size: 24px
+  font-weight: bold
+  color: #333
+  background-color: #f1f1f1
+  padding: 12px
+  border-radius: 4px
+  margin-top: 16px
+  text-align: center
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1)
+
+
+
+
+
+
+
+

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CartService } from './services/cart.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -8,13 +9,24 @@ import { CartService } from './services/cart.service';
 })
 export class AppComponent {
   title = 'cart-app';
-  showCart = false;
+  cartItems: any[] = [];
+  showToggleCart = false;
 
-  constructor( public cartService: CartService) { }
+  constructor(private router: Router, public cartService: CartService) { }
 
+  ngOnInit() {
+    this.cartItems = this.cartService.getCartItems();
+  }
 
+  showProductList() {
+    this.router.navigate(['/products']);
+  }
+
+  showCart() {
+    this.router.navigate(['/cart']);
+  }
   toggleCart(): void {
-    this.showCart = !this.showCart;
+    this.showToggleCart = !this.showToggleCart;
   }
 
 

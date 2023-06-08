@@ -1,10 +1,13 @@
-<h2>Listado de Productos <button class="cart-button" (click)="showCart = !showCart">
-  Ver carrito
-  <span class="cart-badge">{{ cartService.getCartItems().length }}</span>
-</button> </h2>
-<app-product-list></app-product-list>
-<button class="cart-button" (click)="showCart = !showCart">
-  Ver carrito
-  <span class="cart-badge">{{ cartService.getCartItems().length }}</span>
-</button>
-<app-cart *ngIf="showCart"></app-cart>
+
+<nav class="navbar">
+  <ul class="navbar-nav">
+    <li class="nav-item" (click)="showProductList()">Productos</li>
+    <li class="nav-item" (click)="showCart()">Carrito
+      <button class="cart-badge"> {{ cartItems.length }}
+      </button>
+    </li>
+  </ul>
+</nav>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
